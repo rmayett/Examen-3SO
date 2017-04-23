@@ -9,13 +9,13 @@ public class Nodo{
 		this.matr="AB"+(int) Math.floor(Math.random()*16);
 		this.sig=sig;
 	}
-	public void setSig(Nodo sig){
+	public void setsig(Nodo sig){
 		this.sig=sig;
 	}
 	public String getMatr(){
 		return this.matr;
 	}
-	public Nodo getSig(){
+	public Nodo getsig(){
 		return this.sig;
 	}
 }

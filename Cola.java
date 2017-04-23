@@ -1,5 +1,4 @@
 public class Cola{
-
 	Nodo h = new Nodo(); 
 	Nodo t = new Nodo();
 	public Cola(){
@@ -46,7 +45,7 @@ public class Cola{
 		this.t=null;
 	}
 	public void show(){
-		Proceso aux = h;
+		Nodo aux = h;
 		while(aux!=null){
 			System.out.println(aux);
 			aux=aux.getsig();
