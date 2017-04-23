@@ -1,6 +1,6 @@
 public class Carroshilos extends Thread{
 	private Coches coche;	
-	public Cola col = new Cola();		
+	private Cola col = new Cola();		
 	public void run(){
 		while(true){
 			for (int i =0;i<(int)(Math.random()*10);i++) {
@@ -8,7 +8,7 @@ public class Carroshilos extends Thread{
 				this.col.push(s);
 			}
 			System.out.println(getName()+" "+col.ColaVacia());						
-			coche.Estacionar(col);
+			coche.Estacionar(col);			
 			try{
 				sleep((int)(Math.random()*100));
 			}
