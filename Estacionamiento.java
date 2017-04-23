@@ -14,8 +14,12 @@ public class Estacionamiento{
 		System.out.println("Dame el tamaño del estacionamiento");	
 		Tam=tec.nextInt();
 		new ProcessBuilder("cowsay","Creando Estacionamiento").inheritIO().start().waitFor();
-		//Gencarros gen = new Gencarros(Hilosgen);
-		
+		Gencarros[] gen = new Gencarros[NumEnt];
+		for (int i = 0;i<NumEnt ;i++ ) {
+			gen[i]=new Gencarros(Hilosgen);	
+		}
+		for (int j=0;j<NumEnt ;j++ ) {
+		gen[j].start();			
+		}
 	}
-
 }

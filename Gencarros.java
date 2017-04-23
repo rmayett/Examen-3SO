@@ -1,17 +1,15 @@
-public class Gencarros() extends Thread{
-	int hilos; 
+class Gencarros extends Thread{	
+	private int hilos;
 	public Gencarros(int hilos){
-
+		this.hilos= hilos;
 	}
 	public void run(){
-		while(true){
-			nMsj=(int)(Math.random()*100);
-			mensaje.Almacenar(nMsj);
-			System.out.println("Productor "+getName()+": almacena el mensaje #"+nMsj);
-			try{
-				sleep((int)(Math.random()*100));
-			}
-			catch(InterruptedException e){}
+		Carroshilos[] r = new Carroshilos[hilos];
+		for (int i=0;i<hilos;i++) {
+			r[i]=new Carroshilos();
+		}
+		for (int i=0;i<hilos;i++) {
+			r[i].start();			
 		}
 	}
 }

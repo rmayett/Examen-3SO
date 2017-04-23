@@ -11,8 +11,8 @@ public class Cola{
 		}
 		return false;
 	}
-	public void push(){
-		Nodo aux;
+	public void push(Nodo r){
+		Nodo aux=r;
 		if (!ColaVacia()) {
 			t.setsig(aux);
 			t=aux;

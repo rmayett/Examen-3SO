@@ -5,6 +5,10 @@ public class Nodo{
 		this.matr=null;
 		this.sig=null;
 	}
+	public Nodo(int a){
+		this.matr="AB"+(int) Math.floor(Math.random()*a);
+		this.sig=null;
+	}
 	public Nodo(Nodo sig){
 		this.matr="AB"+(int) Math.floor(Math.random()*16);
 		this.sig=sig;
