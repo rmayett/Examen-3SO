@@ -1,10 +1,12 @@
 public class Coches{
-	private Nodo[] estacionamiento = null;
+	private Nodo[] estacionamiento;
 	private boolean disponible = true;
 	private String mensaje;
-	public synchronized void Estacionar(Cola col)throws InterruptedException{
+	public synchronized void Estacionar(Cola col){
 		while(disponible==false){
-			wait();
+			try{
+			wait();}
+			catch(InterruptedException e){}
 		}
 		estacionamiento[estacionamiento.length]=col.pop();				
 		mensaje="estaciono el coche con la matricula: "+estacionamiento[estacionamiento.length].matr;	
