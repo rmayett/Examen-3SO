@@ -5,10 +5,8 @@ public class Carroshilos extends Thread{
 		while(true){
 			for (int i =1;i<5+(int)(Math.random()*10);i++) {				
 				this.col.push(new Nodo(i));
-			}
-			System.out.println(getName());
-			col.show();						
-			c.Estacionar(this.col);			
+			}						
+			c.Estacionar(this.col,getName());			
 			try{
 				sleep((int)(Math.random()*100));
 			}

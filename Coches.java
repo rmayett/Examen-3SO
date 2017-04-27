@@ -1,17 +1,17 @@
 public class Coches{
-	private Nodo[] estacionamiento;
+	private Cola estacionamiento = new Cola();
 	private boolean disponible = true;
 	private String mensaje;
-	public synchronized void Estacionar(Cola col){
+	public synchronized void Estacionar(Cola col,String nombre){
 		while(disponible==false){
 			try{
 			wait();}
 			catch(InterruptedException e){}
 		}
-		estacionamiento[estacionamiento.length]=col.pop();				
-		mensaje="estaciono el coche con la matricula: "+estacionamiento[estacionamiento.length].matr;	
+		estacionamiento.push(col.pop());				
+		mensaje=nombre+" estaciono el coche con la matricula: "+estacionamiento.tope().matr;	
 		System.out.println(mensaje);
-		if (estacionamiento.length-1==Estacionamiento.Tam) {
+		if (estacionamiento.tam()==Estacionamiento.Tam) {
 			disponible=false;			
 		}
 		notifyAll();

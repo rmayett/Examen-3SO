@@ -1,9 +1,14 @@
 public class Cola{
 	Nodo h = new Nodo(); 
 	Nodo t = new Nodo();
+	int i;
 	public Cola(){
+		this.i=0;
 		this.h=null;
 		this.t=null;		
+	}
+	public int tam(){
+		return this.i;
 	}
 	public boolean ColaVacia(){
 		if (this.h==null&&this.t==null) {
@@ -16,9 +21,11 @@ public class Cola{
 		if (!ColaVacia()) {
 			t.setsig(aux);
 			t=aux;
-			t.setsig(null);				
+			t.setsig(null);
+			this.i=this.i+1;				
 		}
 		else{
+			this.i=1;
 			this.h=aux;
 			this.t=aux;
 		}
@@ -32,7 +39,8 @@ public class Cola{
 			if (this.h==null) {
 				this.t=null;							
 						}
-			this.h=this.h.getsig();			
+			this.h=this.h.getsig();
+			this.i=this.i-1;			
 			return resp;		
 		}
 		else{
@@ -47,7 +55,7 @@ public class Cola{
 	public void show(){
 		Nodo aux = h;
 		while(aux!=null){
-			System.out.println(aux);
+			System.out.println(aux.getMatr());
 			aux=aux.getsig();
 		}
 	}
