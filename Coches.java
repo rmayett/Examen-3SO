@@ -11,19 +11,18 @@ public class Coches{
 		estacionamiento.push(col.pop());				
 		mensaje=nombre+" estaciono el coche con la matricula: "+estacionamiento.tope().matr;	
 		System.out.println(mensaje);
-		if (estacionamiento.tam()==Estacionamiento.Tam) {
+		if (this.estacionamiento.tam()==Estacionamiento.Tam) {
 			disponible=false;			
 		}
 		notifyAll();
 	}
-/*	public synchronized Cola Salir()throws InterruptedException{
+	public synchronized Cola Salir()throws InterruptedException{
 		while(disponible==true){
 			wait();
 		}
 		Cola r = new Cola();
-		r.push(estacionamiento[i]);
-		estacionamiento[i]= null;
+		r.push(estacionamiento.pop());		
 		disponible=true;
 		return(r);
-	}*/
+	}
 }
