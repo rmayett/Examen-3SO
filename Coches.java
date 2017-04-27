@@ -23,6 +23,7 @@ public class Coches{
 		Cola r = new Cola();
 		r.push(estacionamiento.pop());		
 		disponible=true;
+		notifyAll();
 		return(r);
 	}
 }

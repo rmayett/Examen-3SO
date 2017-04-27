@@ -6,7 +6,7 @@ public class Nodo{
 		this.sig=null;
 	}
 	public Nodo(int a){
-		this.matr="AB"+(int) Math.floor(Math.random()*a);
+		this.matr="AB"+(int) Math.floor(Math.random()*100+a);
 		this.sig=null;
 	}
 	public Nodo(Nodo sig){
