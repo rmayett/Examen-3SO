@@ -3,10 +3,13 @@ public class Carroshilos extends Thread{
 	private Cola col = new Cola();		
 	public void run(){
 		while(true){
-			for (int i =1;i<5+(int)(Math.random()*10);i++) {				
-				this.col.push(new Nodo(i));
-			}						
-			c.Estacionar(this.col,getName());			
+			int a=(int)(Math.random()*100);
+			if (a<30) {
+				for (int j=0;j<a;j++) {					
+				this.col.push(new Nodo(a));					
+				}
+				c.Estacionar(this.col,getName());							
+				}					
 			try{
 				sleep((int)(Math.random()*100));
 			}

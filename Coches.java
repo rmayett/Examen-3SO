@@ -11,6 +11,7 @@ public class Coches{
 		estacionamiento.push(col.pop());				
 		mensaje=nombre+" estaciono el coche con la matricula: "+estacionamiento.tope().matr;	
 		System.out.println(mensaje);
+		estacionamiento.show();
 		if (this.estacionamiento.tam()==Estacionamiento.Tam) {
 			disponible=false;			
 		}

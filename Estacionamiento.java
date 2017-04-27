@@ -5,15 +5,14 @@ public class Estacionamiento{
 	public static int [] estacionamiento;	
 	public static void main(String[] args) throws IOException,InterruptedException{
 		Scanner tec = new Scanner(System.in);
-		System.out.println("Dame el nuemero de entradas");
+		new ProcessBuilder("cowsay","Dame el nuemero de entradas").inheritIO().start().waitFor();
 		NumEnt=tec.nextInt();
-		System.out.println("Dame el numero de salidas");
+		new ProcessBuilder("cowsay","Dame el numero de salidas").inheritIO().start().waitFor();
 		NumSal=tec.nextInt();
-		System.out.println("Dame el numero de hilos por entrada");
+		new ProcessBuilder("cowsay","Dame el numero de hilos por entrada").inheritIO().start().waitFor();
 		Hilosgen=tec.nextInt();
-		System.out.println("Dame el tamaño del estacionamiento");	
-		Tam=tec.nextInt();
-		new ProcessBuilder("cowsay","Creando Estacionamiento").inheritIO().start().waitFor();
+		new ProcessBuilder("cowsay","Dame el tamaño del estacionamiento").inheritIO().start().waitFor();	
+		Tam=tec.nextInt();		
 		Gencarros[] gen = new Gencarros[NumEnt];
 		for (int i = 0;i<NumEnt ;i++ ) {
 			gen[i]=new Gencarros(Hilosgen);	

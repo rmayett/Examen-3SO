@@ -54,6 +54,7 @@ public class Cola{
 	}
 	public void show(){
 		Nodo aux = h;
+		System.out.println("matriculas de los coches en el estacionamiento");
 		while(aux!=null){
 			System.out.println(aux.getMatr());
 			aux=aux.getsig();
