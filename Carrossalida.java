@@ -9,7 +9,7 @@ public class Carrossalida extends Thread{
 				for (int j=0;j<a;j++) {					
 				this.c.push(new Nodo(a));					
 				}
-				s.Sacar(this.c,getName());							
+				s.Sacar(this.c,getName(),a);							
 				}					
 			try{
 				sleep((int)(Math.random()*100));
