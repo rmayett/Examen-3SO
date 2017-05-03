@@ -11,7 +11,7 @@ public class Estacionamiento{
 		NumSal=tec.nextInt();
 		new ProcessBuilder("cowsay","Dame el numero de hilos por entrada").inheritIO().start().waitFor();
 		Hilosgen=tec.nextInt();
-		new ProcessBuilder("cowsay","Dame el tamaño del estacionamiento").inheritIO().start().waitFor();	
+		new ProcessBuilder("cowsay","Dame el tamanio del estacionamiento").inheritIO().start().waitFor();	
 		Tam=tec.nextInt();		
 		Gencarros[] gen = new Gencarros[NumEnt];
 		for (int i = 0;i<NumEnt ;i++ ) {

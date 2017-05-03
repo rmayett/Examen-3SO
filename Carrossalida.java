@@ -1,5 +1,5 @@
 public class Carrossalida extends Thread{
-    private Salida s= new Salida();
+    private Coches s= new Coches();
     private Cola  c=new Cola();
     
 	public void run(){

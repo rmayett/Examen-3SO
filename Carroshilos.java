@@ -1,14 +1,16 @@
-public class Carroshilos extends Thread{
-	private Coches c = new Coches();	
-	private Cola col = new Cola();		
+public class Carrossalida extends Thread{
+    private Salida s= new Salida();
+    private Cola  c=new Cola();
+    private int tam;
+    
 	public void run(){
 		while(true){
 			int a=(int)(Math.random()*100);
 			if (a<30) {
 				for (int j=0;j<a;j++) {					
-				this.col.push(new Nodo(a));					
+				this.c.push(new Nodo(j));					
 				}
-				c.Estacionar(this.col,getName());							
+				s.Sacar(this.c,getName(),a, tam);							
 				}					
 			try{
 				sleep((int)(Math.random()*100));
