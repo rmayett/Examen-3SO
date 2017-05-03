@@ -6,10 +6,11 @@ public class Carrossalida extends Thread{
 		while(true){
 			int a=(int)(Math.random()*100);
 			if (a<30) {
-				for (int j=0;j<a;j++) {					
-				this.c.push(new Nodo(a));					
-				}
-				s.Sacar(this.c,getName(),a);							
+                            try {
+                                c=s.Salir();
+                                System.out.println("Los carros que salieron son:");
+                                c.show();
+                            } catch (InterruptedException e){} 
 				}					
 			try{
 				sleep((int)(Math.random()*100));

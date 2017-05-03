@@ -18,10 +18,11 @@ public class Coches{
 		notifyAll();
 	}
 	public synchronized Cola Salir()throws InterruptedException{
-		while(disponible==true){
+		while(disponible==false){
 			wait();
 		}
 		Cola r = new Cola();
+                
 		r.push(estacionamiento.pop());		
 		disponible=true;
 		notifyAll();
