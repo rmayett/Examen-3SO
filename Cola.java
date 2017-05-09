@@ -54,7 +54,15 @@ public class Cola{
 	}
 	public void show(){
 		Nodo aux = h;
-		System.out.println("matriculas de los coches en el estacionamiento");
+		System.out.println("Coches del estacionamiento");
+		while(aux!=null){
+			System.out.println(aux.getMatr());
+			aux=aux.getsig();
+		}
+	}
+	public void shows(String nombre){
+		Nodo aux = h;
+		System.out.println(nombre+" Saco los coches del estacionamiento con las matriculas");
 		while(aux!=null){
 			System.out.println(aux.getMatr());
 			aux=aux.getsig();

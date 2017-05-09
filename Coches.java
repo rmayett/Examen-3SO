@@ -1,29 +1,33 @@
 public class Coches{
-	private Cola estacionamiento = new Cola();
 	private boolean disponible = true;
 	private String mensaje;
+	private int a;
 	public synchronized void Estacionar(Cola col,String nombre){
 		while(disponible==false){
 			try{
 			wait();}
 			catch(InterruptedException e){}
 		}
-		estacionamiento.push(col.pop());				
-		mensaje=nombre+" estaciono el coche con la matricula: "+estacionamiento.tope().matr;	
-		System.out.println(mensaje);
-		estacionamiento.show();
-		if (this.estacionamiento.tam()==Estacionamiento.Tam) {
+		Estacionamiento.estacionamiento.push(col.pop());				
+		mensaje=nombre+" estaciono el coche con la matricula: "+Estacionamiento.estacionamiento.tope().matr;			
+		a=Estacionamiento.Tam-Estacionamiento.estacionamiento.tam();
+		System.out.println("Espacios ocupados: "+a+"\n"+mensaje+"\nEstacionamiento");
+		Estacionamiento.estacionamiento.show();
+		if (Estacionamiento.estacionamiento.tam()==Estacionamiento.Tam) {
 			disponible=false;			
 		}
 		notifyAll();
 	}
-	public synchronized Cola Salir()throws InterruptedException{
+	public synchronized Cola Salir(int c){
 		while(disponible==false){
-			wait();
+			try{
+			wait();}
+			catch(InterruptedException e){}
 		}
 		Cola r = new Cola();
-                
-		r.push(estacionamiento.pop());		
+		for (int i=0;i<c;i++) {		
+		r.push(Estacionamiento.estacionamiento.pop());	
+		}		
 		disponible=true;
 		notifyAll();
 		return(r);
